@@ -1,0 +1,92 @@
+:root {
+    /* Settings */
+    --bg : hsl(210, 46%, 95%);
+    --ff : "Manrope";
+    --fsize: 13px;
+
+    /* Color Scheme */
+    --darkGreyishBlue: hsl(217, 19%, 35%);
+    --darkBlue: hsl(214, 17%, 51%);
+    --greyishBlue: hsl(212, 23%, 69%);
+
+}
+
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff);
+}
+
+.container {
+    background-color: white;
+    border-radius: 1rem;
+    line-height: 1.5;
+    color: var(--darkGreyishBlue);
+    margin: 1rem
+}
+
+/* Main Content */
+.container .blog-img {
+    width: 100%;
+    height: clamp(12rem, 10rem, 1rem);
+    object-position: 30% 20%;
+    display: block;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.content {
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.text {
+    font-weight: 500;
+    font-size: var(--fsize);
+}
+
+/* Share Content */
+.profile {
+    padding: 1.5rem;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile .avatar {
+    border-radius: 50%;
+    width: 2.5rem;
+}
+
+.profile .content {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fsize);
+    height: 3rem;
+}
+
+.profile .name {
+    font-weight: 700;
+}
+
+.profile .date {
+    font-weight: 500;
+    color: var(--greyishBlue)
+}
+
+.profile .share {
+    margin-left: auto;
+    padding: 0.5rem 0.65rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg);
+    cursor: pointer;
+}
