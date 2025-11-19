@@ -31,7 +31,7 @@ body {
 /* Main Content */
 .container .blog-img {
     width: 100%;
-    height: clamp(12rem, 10rem, 1rem);
+    height: clamp(13rem, 15vw, 18rem);
     object-position: 30% 20%;
     display: block;
     object-fit: cover;
@@ -39,13 +39,13 @@ body {
     border-top-right-radius: 1rem;
 }
 .content {
-    padding: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 .heading {
     font-weight: 700;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .text {
@@ -55,10 +55,10 @@ body {
 
 /* Share Content */
 .profile {
-    padding: 1.5rem;
-    padding-top: 0;
     display: flex;
     align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
 }
 
 .profile .avatar {
@@ -66,11 +66,10 @@ body {
     width: 2.5rem;
 }
 
-.profile .content {
+.profile-content {
     display: flex;
     flex-direction: column;
     font-size: var(--fsize);
-    height: 3rem;
 }
 
 .profile .name {
@@ -84,9 +83,36 @@ body {
 
 .profile .share {
     margin-left: auto;
-    padding: 0.5rem 0.65rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 50%;
     border: none;
     background: var(--bg);
     cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    max-width: 40rem;
+    max-height: 15rem;
+  }
+
+  .container .blog-img {
+    height: 15rem; 
+    width: 35%;        
+    border-radius: 1rem 0 0 1rem;
+    object-fit: cover;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .profile{
+    margin-top: 1rem;
+  }
+  
 }
