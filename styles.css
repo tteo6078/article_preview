@@ -28,7 +28,9 @@ body {
     line-height: 1.5;
     color: var(--darkGreyishBlue);
     margin: 1rem;
+    position: relative;
     overflow: hidden;
+    min-width: 20rem;
 }
 
 /* Main Content */
@@ -62,6 +64,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .profile .avatar {
@@ -89,64 +92,50 @@ body {
     margin-left: auto;
     display: flex;            
     align-items: center;
-    gap: .5rem;
+    gap: 5rem;
  }
 
 .share-btn {
   background: var(--greyishBlue);
   align-items: flex-end;
   border: none;
-  padding: 6px;
+  padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .share-btn:hover, .share-btn.active {
-  background: var(--greyishBlue);
-  color: var(--bg);
+    z-index: 1;
+    background: var(--greyishBlue);
+    color: var(--bg);
 }
 
 .share-icons {
-    --scale: 1;
-    --translateX: 0;
-    --translateY: 100%;
-    
-    inset: 50px -28px;
-    border-radius: 0;
-    padding: 17px 30px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--darkGreyishBlue);
+    padding: 1rem 1rem;
     position: absolute;
-    bottom: calc(100% + 28px);
-    left: 50%;
     display: flex;
     align-items: center;
-    box-shadow: 0 5px 20px -5px #0003;
-    transform-origin: bottom;
     visibility: hidden;
+    transform-origin: bottom;
 }
 
 .share-icons.active {
-  --scale: 1;
-  visibility: visible;
-  --translateY: 0;
+    visibility: visible;
 }
 
 .share-icons::after {
-  content: '';
-  background: var(--darkGreyishBlue);
-  width:  20px;
-  height: 20px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -60%) rotate(45deg);
+    background: var(--darkGreyishBlue);
 }
 
 .share-icons span {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: var(--grayish-blue);
-  margin-right: 5px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--greyishBlue);
+    margin: 1rem;
 }
 
 
@@ -167,12 +156,10 @@ body {
   .content{
     display: flex;
     flex-direction: column;
-    padding-top: 1.5rem;
-    margin-right: 0.5rem;
   }
 
   .profile{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   
 }
