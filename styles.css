@@ -1,3 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; }
+
 :root {
     /* Settings */
     --bg : hsl(210, 46%, 95%);
@@ -25,7 +27,8 @@ body {
     border-radius: 1rem;
     line-height: 1.5;
     color: var(--darkGreyishBlue);
-    margin: 1rem
+    margin: 1rem;
+    overflow: hidden;
 }
 
 /* Main Content */
@@ -82,18 +85,65 @@ body {
     color: var(--greyishBlue)
 }
 
-.profile .share {
+.share-popup {
+  display: none;              
+  width: 100%;
+  height: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--darkGreyishBlue);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* visible state */
+.share-popup.is-open { display: flex; }
+
+/* label */
+.share-label {
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+}
+
+/* icons group: keep icons inline and vertically centered */
+.share-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* force exact icon sizing and remove baseline gaps */
+.share-icons img {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+/* normalize both share buttons */
+.profile .share,
+.share-popup .active-share {
     margin-left: auto;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     border-radius: 50%;
-    border: none;
     background: var(--bg);
+    border: none;
+    line-height: 0;
     cursor: pointer;
 }
 
-.profile.active {
-    background-color: var(--darkGreyishBlue);
+/* hide by default */
+.hidden {
+  display: none;
 }
+
 
 @media (min-width: 800px) {
   .container {
