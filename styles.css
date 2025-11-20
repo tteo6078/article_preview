@@ -51,6 +51,7 @@ body {
 .text {
     font-weight: 500;
     font-size: var(--fsize);
+    color: var(--darkBlue)
 }
 
 /* Share Content */
@@ -88,6 +89,10 @@ body {
     border: none;
     background: var(--bg);
     cursor: pointer;
+}
+
+.profile.active {
+    background-color: var(--darkGreyishBlue);
 }
 
 @media (min-width: 800px) {
