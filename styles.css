@@ -31,6 +31,7 @@ body {
     position: relative;
     overflow: hidden;
     min-width: 20rem;
+    max-height: 40rem;
 }
 
 /* Main Content */
@@ -64,7 +65,8 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: -0.5rem;
 }
 
 .profile .avatar {
@@ -91,13 +93,10 @@ body {
 .share { 
     margin-left: auto;
     display: flex;            
-    align-items: center;
-    gap: 5rem;
  }
 
 .share-btn {
   background: var(--greyishBlue);
-  align-items: flex-end;
   border: none;
   padding: 0.5rem;
   border-radius: 50%;
@@ -115,16 +114,22 @@ body {
     bottom: 0;
     width: 100%;
     background-color: var(--darkGreyishBlue);
-    padding: 1rem 1rem;
     position: absolute;
     display: flex;
     align-items: center;
     visibility: hidden;
-    transform-origin: bottom;
+    gap: 1rem;
+    padding: 1.3rem;
+    transform: translateY(110%); 
+    transition:
+    transform 260ms cubic-bezier(.2,.9,.3,1),
+    visibility 0ms linear 260ms;
 }
 
 .share-icons.active {
     visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
 }
 
 .share-icons::after {
@@ -135,7 +140,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--greyishBlue);
-    margin: 1rem;
+    font-size: 13px;
+    padding-left: 0.7rem;
 }
 
 
@@ -144,6 +150,7 @@ body {
     display: flex;
     max-width: 40rem;
     max-height: 15rem;
+    overflow: visible;
   }
 
   .container .blog-img {
@@ -160,6 +167,34 @@ body {
 
   .profile{
     margin-top: 0.5rem;
+  }
+
+  .share-icons {
+    left: 485px;
+    bottom: 70px;
+    width: auto;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+  }
+
+  .share-icons.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .share-icons::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    bottom: -5px;                    
+    transform: translateX(-50%) rotate(45deg);
+    background: var(--darkGreyishBlue);
+    z-index: 1;
   }
   
 }
