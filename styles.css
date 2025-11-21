@@ -99,7 +99,7 @@ body {
  }
 
 .share-btn {
-  background: var(--greyishBlue);
+  background: var(--bg);
   border: none;
   padding: 0.5rem;
   border-radius: 50%;
